@@ -3,10 +3,10 @@ pub struct Book {
     pub id: i32,
     pub author: String,
     pub title: String,
-    pub isbn: String,
+    pub isbn: Option<String>,
 }
 
-use super::schema::books;
+use schema::books;
 
 #[derive(Insertable)]
 #[table_name="books"]

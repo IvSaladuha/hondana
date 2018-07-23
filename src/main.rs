@@ -1,18 +1,47 @@
+#[macro_use]
+extern crate diesel;
+extern crate dotenv;
+
 extern crate actix;
 extern crate actix_web;
 
 use actix_web::{server, App, HttpRequest, HttpResponse};
+use diesel::prelude::*;
+
+use diesel::pg::PgConnection;
+use dotenv::dotenv;
+use std::env;
+
+mod models;
+use models::Book;
+mod schema;
+
+fn establish_connection() -> PgConnection {
+    dotenv().ok();
+
+    let database_url = env::var("DATABASE_URL")
+        .expect("DATABASE_URL must be set");
+    PgConnection::establish(&database_url)
+        .expect(&format!("Error connecting to {}", database_url))
+}
 
 fn get_books(_req: HttpRequest) -> HttpResponse {
-    let table_content = "
+    use self::schema::books::dsl::*;
+
+    let connection = establish_connection();
+
+    let results = books.limit(5).load::<Book>(&connection)
+        .expect("Error loading books");
+    let rows: Vec<String> = results.iter().map(|b| format!("<tr><td>{}</td></tr>", b.title)).collect();
+
+    let table_content = format!("
         <thead>
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>2</td>
+                {}
             </tr>
-        </tbody>";
+        </tbody>", rows.join(" "));
 
     let body = format!("
     <!DOCTYPE html>
