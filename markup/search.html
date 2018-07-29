@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <div class="uk-container uk-container-center uk-margin-top uk-margin-bottom">
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-item">
+                <h2>Библиотека Посёлка Программистов</h2>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="#">Записаться</a>
+                    </li>
+                    <li>
+                        <a href="#">Войти</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="uk-card uk-card-body">
+            <div class="uk-card uk-card-body uk-background-muted">
+                <h4>Поиск</h4>
+                По названию или автору
+                <form>
+                    <input class="uk-input" type="text" placeholder="Название (часть) или фамилия автора"/>
+                </form>
+                <table class="uk-table uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Автор</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Приключения Миши</td>
+                            <td>М.Мишинёв</td>
+                            <td><span class="uk-text-danger">Книга занята</span></td>
+                        </tr>
+                        <tr>
+                            <td>Приключения Миши 2</td>
+                            <td>М.Мишинёв</td>
+                            <td><span class="uk-text-warning">Вы не записаны</span></td>
+                        </tr>
+                        <tr>
+                            <td>Деревянные лабиринты</td>
+                            <td>Д.Буратинов</td>
+                            <td><span class="uk-text-success">Вы уже читаете</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <div class="uk-card uk-card-default uk-card-body">
+        <p>Если нужной вам книги нет ни в одном из филиалов, предложите её к закупке.</p>
+        <button class="uk-button uk-button-primary">Предложить книгу</button>
+    </div>
+</body>
+</html>
