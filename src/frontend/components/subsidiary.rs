@@ -41,7 +41,7 @@ impl Component for SubsidiaryList {
 impl Renderable<SubsidiaryList> for SubsidiaryList {
     fn view(&self) -> Html<Self> {
         html!{
-            <div class="uk-width-1-4 uk-card uk-card-body uk-background-muted",>
+            <div class=("uk-width-1-4", "uk-card", "uk-card-body", "uk-background-muted"),>
                 <h4>{&self.title }</h4>
                 <ul class="uk-list",>
                     { for self.subsidiaries.iter().map(render_subsidiary) }

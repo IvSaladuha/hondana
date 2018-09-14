@@ -100,7 +100,7 @@ fn render_latest(l: &Latest) -> Html<LatestsScrollNav> {
     html! {
         <li>
             <img src={&l.img_url}, alt="", uk-cover="",/>
-            <div class="uk-overlay uk-light uk-overlay-default uk-position-bottom",>
+            <div class=("uk-overlay", "uk-light", "uk-overlay-default", "uk-position-bottom"),>
                 <p>{&l.caption}</p>
             </div>
         </li>
@@ -115,8 +115,8 @@ impl Renderable<LatestsScrollNav> for LatestsScrollNav {
                     <ul class="uk-slideshow-items",>
                         { for self.items.iter().map(render_latest) }
                     </ul>
-                    <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover", href="#", uk-slidenav-previous="", uk-slideshow-item="previous",></a>
-                    <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover", href="#", uk-slidenav-next="", uk-slideshow-item="next",></a>
+                    <a class=("uk-slidenav-large", "uk-position-center-left", "uk-position-small", "uk-hidden-hover"), href="#", uk-slidenav-previous="", uk-slideshow-item="previous",></a>
+                    <a class=("uk-slidenav-large", "uk-position-center-right", "uk-position-small", "uk-hidden-hover"), href="#", uk-slidenav-next="", uk-slideshow-item="next",></a>
                 </div>
             </div>
         }

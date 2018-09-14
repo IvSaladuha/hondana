@@ -41,9 +41,9 @@ impl Component for OfferBuyForm {
 impl Renderable<OfferBuyForm> for OfferBuyForm {
     fn view(&self) -> Html<Self> {
         html! {
-            <div class="uk-card uk-card-default uk-card-body",>
+            <div class=("uk-card", "uk-card-default", "uk-card-body"),>
                 <p>{&self.text}</p>
-                <button class="uk-button uk-button-primary",>{"Предложить книгу"}</button>
+                <button class=("uk-button", "uk-button-primary"),>{"Предложить книгу"}</button>
             </div>
         }
     }

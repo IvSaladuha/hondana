@@ -42,7 +42,7 @@ impl Component for SearchForm {
 impl Renderable<SearchForm> for SearchForm {
     fn view(&self) -> Html<Self> {
         html! {
-            <div class="uk-width-3-4 uk-card uk-card-body uk-background-muted",>
+            <div class=("uk-width-3-4", "uk-card", "uk-card-body", "uk-background-muted"),>
                 <h4>{&self.title}</h4>
                 {"По названию или автору"}
                 <form>
@@ -87,7 +87,7 @@ impl Renderable<SearchThemesModal> for SearchThemesModal {
                     <ul class="uk-list",>
                         {for self.themes.iter().map(render_theme)}
                     </ul>
-                    <button class="uk-button uk-modal-close",>{"Закрыть"}</button>
+                    <button class=("uk-button", "uk-modal-close"),>{"Закрыть"}</button>
                 </div>
             </div>
         }

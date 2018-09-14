@@ -65,7 +65,7 @@ impl Renderable<Model> for Model {
         let address_list: Vec<String> = subsidiary_list.into_iter().map(|s| s.to_owned()).collect();
 
         html! {
-            <div class=("uk-container", "uk-container-center", "uk-margin-top uk-margin-bottom"),>
+            <div class=("uk-container", "uk-container-center", "uk-margin-top", "uk-margin-bottom"),>
                 <Header: title="Библиотека Посёлка Программистов", />
                 <div class=("uk-grid", "uk-card", "uk-card-body"),>
                     <SearchForm: on_submit=|_| Msg::SubmitSearchForm, />
