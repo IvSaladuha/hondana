@@ -25,7 +25,7 @@ fn establish_connection() -> PgConnection {
         .expect(&format!("Error connecting to {}", database_url))
 }
 
-fn get_books(_req: HttpRequest) -> HttpResponse {
+fn get_books(_req: &HttpRequest) -> HttpResponse {
     use self::schema::books::dsl::*;
 
     let connection = establish_connection();
