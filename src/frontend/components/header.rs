@@ -38,7 +38,6 @@ impl Component for Header {
 impl Renderable<Header> for Header {
     fn view(&self) -> Html<Self> {
         html!{
-            <nav class="uk-navbar-container",uk-navbar="",>
                 <div class="uk-navbar-item",>
                     <h2>{ &self.title }</h2>
                 </div>
@@ -52,7 +51,6 @@ impl Renderable<Header> for Header {
                         </li>
                     </ul>
                 </div>
-            </nav>
         }
     }
 }
